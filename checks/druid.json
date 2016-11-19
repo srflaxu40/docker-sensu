@@ -1,0 +1,18 @@
+{
+ "checks": {
+  "druid-ingestion-prod": {
+    "command": "/bin/bash /etc/sensu/conf.d/checks/check_ingestion.sh",
+    "subscribers": [
+      "druid-ingestion"
+    ],  
+    "interval": 60, 
+    "occurrences": 1,
+    "refresh": 60, 
+    "handlers": [ "slack", "email" ],
+    "slack": {
+      "channels": [ "<your channel>" ]
+    }   
+  }
+ }
+}
+

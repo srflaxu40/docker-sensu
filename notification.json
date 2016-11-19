@@ -1,0 +1,16 @@
+{
+  "mailer": {
+    "mail_from": "noreply@sensu.no-reply.com",
+    "mail_to": "eng-rt@no-reply.com",
+    "smtp_address": "asp.reflexion.net",
+    "smtp_port": "25",
+    "smtp_domain": "no-reply.com"
+  },
+  "slack": {
+    "webhook_url": "<a slack incoming webhook integration endpoint>",
+    "username": "alert-bot",
+    "channel": "engineering",
+    "timeout": 5
+  }
+}
+

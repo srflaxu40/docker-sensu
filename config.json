@@ -1,0 +1,25 @@
+{
+  "rabbitmq": {
+    "host": "127.0.0.1",
+    "port": 5672,
+    "user": "sensu",
+    "password": "secret",
+    "vhost": "/sensu"
+  },
+  "redis": {
+    "host": "127.0.0.1",
+    "port": 6379
+  },
+  "api": {
+    "host": "localhost",
+    "port": 4567
+  },
+  "client": {
+    "name": "localhost",
+    "address": "127.0.0.1",
+    "subscriptions": [
+      "druid-ingestion"
+    ]
+  }
+}
+

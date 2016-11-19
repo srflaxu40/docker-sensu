@@ -1,0 +1,19 @@
+sensu:
+  image: <your repo>/sensu:${SHA}-${BRANCH}-${ENVIRONMENT}
+  ports:
+  - 3005:3000/tcp
+  labels:
+    io.rancher.container.pull_image: always
+    io.rancher.stack.name: "<your repo>/sensu:${SHA}-${BRANCH}-${ENVIRONMENT}"
+  tty: true
+  log_driver: "gelf"
+  log_opt:
+    gelf-address: "udp://localhost:5000"
+    gelf-tag: "sensu-${ENVIRONMENT}"
+  stdin_open: true
+  environment:
+    - SHA=${SHA}
+    - BRANCH=${BRANCH}
+    - ENVIRONMENT=${ENVIRONMENT}
+  external_links:
+    - logstash/logstash:logstash

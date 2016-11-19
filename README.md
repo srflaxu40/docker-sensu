@@ -45,3 +45,14 @@ rancher-compose --verbose \
 * `make build`
 * `make push`
 
+---
+
+# Notes:
+* This repo builds all the components of sensu into one giant, fat docker container.
+* Yes, I know this breaks all 12-factor, docker ephemerality, failover idioms.
+* Honestly, I just wanted one Sensu container running with all the inner workings, self-contained, and without
+  having to worry about failover, etc, or anything else I have run into in the Docker / Rancher realm.
+* Put check JSON files under checks/, handlers under handlers/, plugins under plugins, and for those experienced
+  with Sensu you know the rest...
+* Modify the config.json, and notifications.json as well as the example check for your purposes...
+
