@@ -1,7 +1,7 @@
 FROM ruby:2.3.1-slim
 
 RUN apt-get update && \
-    apt-get -y install apt-transport-https wget logrotate curl && \
+    apt-get -y install apt-transport-https wget logrotate curl build-essential && \
     echo "deb     https://sensu.global.ssl.fastly.net/apt sensu main" | tee /etc/apt/sources.list.d/sensu.list && \
     wget -q https://sensu.global.ssl.fastly.net/apt/pubkey.gpg -O- | apt-key add - && \
     wget http://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb && \
